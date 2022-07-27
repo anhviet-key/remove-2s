@@ -1,0 +1,53 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>txtTwo</title>
+    <link rel="stylesheet" href="Two.css" />
+  </head>
+  <body>
+    <div class="">
+      <ul>
+        <li class="name">1</li>
+        <li class="name">2</li>
+        <li class="name">3</li>
+        <li class="name">4</li>
+        <li class="name">5</li>
+        <div class="trans"></div>
+      </ul>
+    </div>
+  </body>
+  <script>
+    const one = document.querySelectorAll(".name");
+    const two = document.querySelector(".trans");
+    var s = 0;
+    var i = 0;
+    var colors = ["red", "green", "yellow", "orange"];
+    setInterval(function () {
+      var x = s + 80;
+      s = x;
+      if (s <= 320) {
+        two.style.transform = `translateY(${x}px)`;
+        if (s == 80) {
+          two.style.background = "red";
+        }
+        if (s == 160) {
+          two.style.background = "green";
+        }
+        if (s == 240) {
+          two.style.background = "yellow";
+        }
+        if (s == 320) {
+          two.style.background = "orange";
+        }
+      } else {
+        s = -80;
+        two.style.background = `${colors[Math.floor(Math.random() * 3)]}`;
+      }
+    }, s + 1000 + 800);
+  </script>
+</html>

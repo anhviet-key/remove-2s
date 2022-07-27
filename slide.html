@@ -1,0 +1,120 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        width: 1200px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .img {
+        width: 800px;
+        display: flex;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+      .btn {
+        background-color: aqua;
+        padding: 10px;
+        cursor: pointer;
+        font-weight: bolder;
+        border-radius: 1000px;
+      }
+      .btnbtn {
+        position: relative;
+        top: -35px;
+        left: 47.5%;
+      }
+
+      .btn:hover {
+        background-color: red;
+      }
+      .imgimg {
+        margin-left: 0;
+        transition: all 0.5s ease-in-out;
+      }
+      .main {
+        margin-top: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="img">
+        <img
+          class="imgimg"
+          src="https://freetuts.net/upload/tut_post/images/2017/07/30/964/slide-1.jpg"
+          alt=""
+        />
+        <img
+          class="imgimg"
+          src="https://freetuts.net/upload/tut_post/images/2017/07/30/964/slide-3.jpg"
+          alt=""
+        />
+        <img
+          class="imgimg"
+          src="https://freetuts.net/upload/tut_post/images/2017/07/30/964/slide-2.jpg"
+          alt=""
+        />
+        <img
+          class="imgimg"
+          src="https://danviet.mediacdn.vn/upload/4-2019/images/2019-10-08/Trung-Quoc-vuot-mat-Nga-hot-bac-o-Ukraine-ukraine-china-1570551235-width800height300.png"
+          alt=""
+        />
+        <img
+          class="imgimg"
+          src="https://image-us.eva.vn/upload/2-2020/images/2020-04-22/cachphasuadung-4-1587560708-610-width800height300.jpg"
+          alt=""
+        />
+      </div>
+      <div class="btnbtn">
+        <span id="btn1" class="btn"><</span>
+        <span id="btn2" class="btn">></span>
+      </div>
+    </div>
+  </body>
+  <script>
+    const $ = document.querySelector.bind(document);
+    const $$ = document.querySelectorAll.bind(document);
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+    const imgs = document.querySelector(".imgimg");
+    const imgss = document.querySelectorAll(".imgimg");
+    var ixs = 0;
+    setInterval(function () {
+      if (ixs >= Number(imgss.length - 1) * 800) {
+        ixs = 0;
+        imgs.style.marginLeft = `${Number(ixs)}px`;
+      } else {
+        ixs = `${Number(ixs) + Number(800)}`;
+        imgs.style.marginLeft = `${Number(-ixs)}px`;
+      }
+    }, 7000);
+    btn2.onclick = function () {
+      if (ixs >= Number(imgss.length - 1) * 800) {
+        ixs = 0;
+        imgs.style.marginLeft = `${Number(ixs)}px`;
+      } else {
+        ixs = `${Number(ixs) + Number(800)}`;
+        imgs.style.marginLeft = `${Number(-ixs)}px`;
+      }
+    };
+    btn1.onclick = function () {
+      if (ixs == 0) {
+        ixs = Number(imgss.length - 1) * 800;
+        imgs.style.marginLeft = `${Number(-ixs)}px`;
+      } else {
+        ixs = `${Number(ixs) - Number(800)}`;
+        imgs.style.marginLeft = `${Number(-ixs)}px`;
+      }
+    };
+  </script>
+</html>

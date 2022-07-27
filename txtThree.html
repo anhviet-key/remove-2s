@@ -1,0 +1,42 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Three.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Three</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="circle"></div>
+      <div class="back">
+        <div class="title">name</div>
+        <div class="name">address</div>
+      </div>
+    </div>
+    <button class="fade" style="margin: 0px 0 0px 40px">Fade!</button>
+    <button class="btn" style="margin: 0px 0 0px 40px">Show!</button>
+    <button class="btn2" style="margin: 0px 0 0px 40px">animate!</button>
+    <button class="btn3" style="margin: 0px 0 0px 40px">Stop!</button>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $(".fade").click(function () {
+        $(".circle").fadeOut(3000);
+      });
+      $(".btn").click(function () {
+        $(".circle").slideToggle(3000);
+      });
+      $(".btn2").click(function () {
+        $(".circle").animate({ width: "toggle", height: "toggle" }, 3000);
+      });
+      $(".btn3").click(function () {
+        $(".circle").stop(true);
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,35 @@
+/** @format */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 660px;
+  color: #fff;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+ul li {
+  list-style: none;
+  padding: 10px;
+  background-color: blueviolet;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  border-radius: 1000px;
+}
+.trans {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 1000px;
+  position: absolute;
+  inset: 0;
+  background-color: rgb(5, 5, 8);
+  transition: all 0.5s;
+}
